@@ -1,8 +1,25 @@
+NAME:=sbt-alpine
+
 dev:
-	docker run -it --name="spsa" alpine:3.11 sh
+	docker run -it alpine:3.11 sh
 
 build:
-	docker build -t spsa .
+	docker build -t ${NAME} .
 
 run:
-	docker run -it --name="spsa" spsa sh
+	docker run -it --name=${NAME} ${NAME} sh
+
+# org
+c-prune:
+	docker container prune
+
+i-prune:
+	docker image prune
+
+v-prune:
+	docker volume prune
+
+prune:
+	make c-prune
+	make i-prune
+	make v-prune

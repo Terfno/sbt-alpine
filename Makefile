@@ -1,4 +1,4 @@
-NAME:=sbt-alpine
+NAME:=terfno/sbt
 
 dev:
 	docker run -it alpine:3.11 sh

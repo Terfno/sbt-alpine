@@ -1,4 +1,5 @@
 NAME:=terfno/sbt
+CNAME:=sbt-alpine
 
 dev:
 	docker run -it alpine:3.11 sh
@@ -7,7 +8,7 @@ build:
 	docker build -t ${NAME} .
 
 run:
-	docker run -it --name=${NAME} ${NAME} sh
+	docker run -it --name=${CNAME} ${NAME} sh
 
 # org
 c-prune:
